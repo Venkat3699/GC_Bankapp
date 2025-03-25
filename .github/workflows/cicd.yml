@@ -120,3 +120,14 @@ jobs:
       with:
         name: app-jar
         path: target/*.jar 
+
+  download_artifact_and_build_image:
+    runs-on: gcbank_app
+    needs: Upload_artifact
+    steps:
+    - uses: actions/checkout@v4
+    - name: Download Jar artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: app-jar
+        path: app  # this will download JAR to ./app folder
