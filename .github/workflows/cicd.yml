@@ -128,14 +128,9 @@ jobs:
       uses: docker/setup-qemu-action@v3
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
-    - name: Build Docker Image
-      uses: docker/build-push-action@v4
+    - name: Build and push
+      uses: docker/build-push-action@v6
       with:
-        tags: ravisree900/gc_bankapp:${{ github.run_number }}
-        push: false
-        load: true
-    - name: Push Docker Image
-      uses: docker/build-push-action@v4
-      with:
-        tags: ravisree900/gc_bankapp:${{ github.run_number }}
         push: true
+        context: ./
+        tags: ravisree900/gc_bankapp:${{ github.run_number }}
