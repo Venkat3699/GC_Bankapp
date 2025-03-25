@@ -7,7 +7,7 @@ on:
 
 jobs:
   compile:
-    runs-on: ubuntu-latest
+    runs-on: gcbank_app
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -20,7 +20,7 @@ jobs:
       run: mvn compile
 
   unit_test:
-    runs-on: ubuntu-latest
+    runs-on: gcbank_app
     needs: compile
     steps:
     - uses: actions/checkout@v4
@@ -34,7 +34,7 @@ jobs:
       run: mvn test
 
   trivy_Scan:
-    runs-on: ubuntu-latest
+    runs-on: gcbank_app
     needs: unit_test
     steps:
     - uses: actions/checkout@v4
