@@ -134,7 +134,3 @@ jobs:
         push: true
         context: ./
         tags: ravisree900/gc_bankapp:${{ github.run_number }}
-
-    - name: Run Docker container
-      run: |
-        docker run -d --name bankapp_container -p 8080:8080 ravisree900/gc_bankapp:${{ github.run_number }}
