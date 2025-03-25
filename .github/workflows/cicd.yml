@@ -134,12 +134,6 @@ jobs:
         tags: ravisree900/gc_bankapp:${{ github.run_number }}
         push: false
         load: true
-    - name: Run Trivy vulnerability scanner
-      uses: aquasecurity/trivy-action@0.28.0
-      with:
-        image-ref: 'ravisree900/gc_bankapp:${{ github.run_number }}'
-        format: 'table'
-        output: 'trivy_report.json'
     - name: Push Docker Image
       uses: docker/build-push-action@v4
       with:

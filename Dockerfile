@@ -2,7 +2,7 @@
 FROM eclipse-temurin:17-jdk-alpine
 
 # Set the working directory
-ENV APP_HOME=/usr/src/app
+ENV APP_HOME /usr/src/app
 WORKDIR $APP_HOME
 
 # Copy the JAR file from the app directory to the Docker image
