@@ -133,4 +133,5 @@ jobs:
       uses: docker/build-push-action@v6
       with:
         push: true
+        context: ./
         tags: ravisree900/gc_bankapp:latest
