@@ -23,7 +23,7 @@ FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
 # Copy the JAR file into the container at /app
-COPY app/*.jar /app/app.jar
+COPY app/*.jar /usr/src/app/app.jar
 
 # Expose the port the app runs on
 EXPOSE 8080
