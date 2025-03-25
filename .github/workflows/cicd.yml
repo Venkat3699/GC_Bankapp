@@ -6,8 +6,19 @@ on:
     branches: [ "main" ]
 
 jobs:
+  git_leaks:
+    runs-on: gcbank_app
+    steps:
+    - uses: actions/checkout@v4
+    - name: Gitleaks Installation
+      run: sudo apt install gitleaks -y
+
+    - name: Gitleaks Code Scan
+      run: gitleaks detect source . -r gitleaks-report.json -f json
+    
   compile:
     runs-on: gcbank_app
+    needs: git_leaks
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
